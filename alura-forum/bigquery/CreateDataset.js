@@ -3,7 +3,7 @@ const BigQueryInstance = new BigQuery()
 
 async function CreateDataset() {
     const [datasets] = await BigQueryInstance.getDatasets()
-    const datasetName = 'alura-forum'
+    const datasetName = 'aluraForum'
     const filteredDatasets = datasets.filter(currentDataset => currentDataset.id == datasetName)
 
     if (filteredDatasets.length > 0) {

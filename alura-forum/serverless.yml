@@ -26,12 +26,19 @@ package:
     - .git/**
 
 functions:
-  first:
+  ReceiveActivity:
     # function name
     handler: receiveActivity
     # event which will trigger the function
     events:
       - http: path
+  InsertActivity:
+    handler: InsertActivity
+    events:
+      - event:
+          eventType: providers/cloud.pubsub/eventTypes/topic.publish
+          resource: projects/${self:provider.project}/topics/activities
+
   # NOTE: the following uses an "event" event (pubSub event in this case).
   # Please create the corresponding resources in the Google Cloud
   # before deploying this service through Serverless
