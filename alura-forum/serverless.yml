@@ -5,7 +5,7 @@ provider:
   stage: dev
   runtime: nodejs10
   region: us-central1
-  project: clear-chain-426717-a7
+  project: alura-forum-428015
   # The GCF credentials can be a little tricky to set up. Luckily we've documented this for you here:
   # https://serverless.com/framework/docs/providers/google/guide/credentials/
   #
@@ -26,8 +26,10 @@ package:
     - .git/**
 
 functions:
-  receiveActivity:
+  first:
+    # function name
     handler: receiveActivity
+    # event which will trigger the function
     events:
       - http: path
   # NOTE: the following uses an "event" event (pubSub event in this case).
