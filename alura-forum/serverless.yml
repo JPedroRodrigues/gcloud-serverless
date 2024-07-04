@@ -3,7 +3,7 @@ service: alura-forum
 provider:
   name: google
   stage: dev
-  runtime: nodejs10
+  runtime: nodejs20
   region: us-central1
   project: alura-forum-428015
   # The GCF credentials can be a little tricky to set up. Luckily we've documented this for you here:
@@ -26,14 +26,14 @@ package:
     - .git/**
 
 functions:
-  ReceiveActivity:
+  receiveActivity:
     # function name
     handler: receiveActivity
     # event which will trigger the function
     events:
       - http: path
-  InsertActivity:
-    handler: InsertActivity
+  insertActivity:
+    handler: insertActivity
     events:
       - event:
           eventType: providers/cloud.pubsub/eventTypes/topic.publish

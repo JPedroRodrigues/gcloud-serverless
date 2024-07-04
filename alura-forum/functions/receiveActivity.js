@@ -1,6 +1,6 @@
 "use strict"
 
-const PubSub = require("./PubSub")
+const PubSub = require("./pubsub")
 
 module.exports = async function receiveActivity(req, res) {
     const result = await PubSub(req.body, "activities")

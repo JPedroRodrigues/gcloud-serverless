@@ -1,8 +1,11 @@
-const BigQuery = require("../../node_modules/@google-cloud/bigquery").BigQuery
-const BigQueryInstance = new BigQuery()
+"use strict"
 
-async function CreateDataset() {
-    const [datasets] = await BigQueryInstance.getDatasets()
+const { BigQuery } = require("@google-cloud/bigquery")
+
+async function createDataset() {
+    const bigquery = new BigQuery()
+    const [datasets] = await bigquery.getDatasets()
+
     const datasetName = 'aluraForum'
     const filteredDatasets = datasets.filter(currentDataset => currentDataset.id == datasetName)
 
@@ -11,8 +14,8 @@ async function CreateDataset() {
        return 
     }
 
-    await BigQueryInstance.createDataset(datasetName)
+    await bigquery.createDataset(datasetName)
     console.log(`Dataset ${datasetName} created with success`)
 }
 
-CreateDataset()
+createDataset()

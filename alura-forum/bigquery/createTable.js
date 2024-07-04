@@ -1,8 +1,10 @@
-const BigQuery = require("@google-cloud/bigquery").BigQuery
-const BigQueryInstance = new BigQuery()
+"use strict"
 
-async function CreateTable() {
-    const dataset = BigQueryInstance.dataset("aluraForum")
+const { BigQuery } = require("@google-cloud/bigquery")
+
+async function createTable() {
+    const bigquery = new BigQuery()
+    const dataset = bigquery.dataset("aluraForum")
     const [tables] = await dataset.getTables()
 
     const tableName = "activities"
@@ -49,4 +51,4 @@ async function CreateTable() {
     console.log(`Table \"${tableName}\" created successfully`)
 }
 
-CreateTable()
+createTable()

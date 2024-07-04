@@ -1,4 +1,6 @@
-const PubSub = require("../../node_modules/@google-cloud/pubsub").PubSub
+"use strict"
+
+const PubSub = require("@google-cloud/pubsub").PubSub
 const PubSubInstance = new PubSub()
 
 module.exports = function pubsub(data, topic) {

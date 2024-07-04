@@ -1,6 +1,8 @@
-const insert = require("../bigquery/Insert")
+"use strict"
 
-module.exports = async function InsertActivity(event) {
+const insert = require("../bigquery/insert")
+
+module.exports = async function insertActivity(event) {
     try {
         const encodedActivity = event.data
         const activityJson = Buffer.from(encodedActivity, "base64").toString()
