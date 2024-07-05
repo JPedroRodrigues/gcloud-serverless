@@ -10,5 +10,5 @@ module.exports = function pubsub(data, topic) {
 
     data = Buffer.from(data)
     // .publish(data) method is deprecated
-    return PubSubInstance.topic(topic).publishMessage(data)
+    return PubSubInstance.topic(topic).publish(data)
 }
