@@ -2,7 +2,7 @@
 
 const { BigQuery } = require("@google-cloud/bigquery")
 
-async function createTable() {
+async function createActivityTable() {
     const bigquery = new BigQuery()
     const dataset = bigquery.dataset("aluraForum")
     const [tables] = await dataset.getTables()
@@ -12,6 +12,7 @@ async function createTable() {
 
     if (foundTables.length > 0) {
         console.log(`This table \"${tableName}\" already exists!`)
+        return
     }
 
     const structure = [
@@ -51,4 +52,4 @@ async function createTable() {
     console.log(`Table \"${tableName}\" created successfully`)
 }
 
-createTable()
+createActivityTable()

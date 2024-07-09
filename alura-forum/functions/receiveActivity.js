@@ -32,6 +32,6 @@ module.exports = async function receiveActivity(req, res) {
     }
 
     const result = await PubSub(req.body, "activities")
-    console.log(req.body)
+    console.log(activity)
     res.send(result)
 }

@@ -2,13 +2,13 @@
 
 const insert = require("../bigquery/insert")
 
-module.exports = async function insertActivity(event) {
+module.exports = async function insertUser(event) {
     try {
         const encodedActivity = event.data
         const activityJson = Buffer.from(encodedActivity, "base64").toString()
         const activity = JSON.parse(activityJson)
 
-        const results = await insert(activity, "activities")
+        const results = await insert(activity, "users")
         console.log(results)
     } catch (exception) {
         console.error(exception)
