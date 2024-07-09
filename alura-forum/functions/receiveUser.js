@@ -23,7 +23,7 @@ module.exports = async function receiveUser(req, res) {
         return
     }
 
-    const result = await pubsub(req.body, "users")
+    const result = await pubsub(user, "users")
     console.log(user)
     res.send(result)
 }
