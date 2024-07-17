@@ -8,4 +8,5 @@ ENV USER=alura-forum
 
 ENV PASSWORD=minhasenhasecreta
 
-CMD [ "node", "/app/api/index.js" ]
+#CMD [ "node", "/app/api/index.js" ]
+CMD [ "node", "/app/api/countCourses.js" ]

@@ -64,3 +64,17 @@ After that, you can push your endpoint with the following command
 ```bash
 docker push gcr.io/<projectId>/alura-forum
 ```
+
+## Removing your recently created docker images
+
+Now that you have pushed you docker image, you don't need to have it stored locally. So you can list your local docker images using the command:
+
+```bash
+docker images
+```
+
+And, finally, you can delete the image using the command:
+
+```bash
+docker image remove <image_name>
+```
