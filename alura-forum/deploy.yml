@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: forum-alura
+  name: forum-alura
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: forum-alura
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: forum-alura
+    spec:
+      # no need to configure auth because we allowed this cluster to communicate with every gcloud API in advance
+      containers:
+      - image: gcr.io/alura-forum-428015/alura-forum
+        name: alura-forum
+        ports:
+          - containerPort: 3000
+          env:
+            - name: USER
+              valueFrom:
+                secretKeyRef:
+                  name: alura-secret
+                  key: USER
+            - name: PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: alura-secret
+                  key: PASSWORD
+        resources: {}
+status: {}
