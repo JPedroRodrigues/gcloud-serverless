@@ -22,17 +22,17 @@ spec:
       - image: gcr.io/alura-forum-428015/alura-forum
         name: alura-forum
         ports:
-          - containerPort: 3000
-          env:
-            - name: USER
-              valueFrom:
-                secretKeyRef:
-                  name: alura-secret
-                  key: USER
-            - name: PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: alura-secret
-                  key: PASSWORD
+        - containerPort: 3000
+        env:
+        - name: USER
+          valueFrom:
+            secretKeyRef:
+              name: alura-secret
+              key: USER
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: alura-secret
+              key: PASSWORD
         resources: {}
 status: {}
