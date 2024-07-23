@@ -1,6 +1,6 @@
 # Google Cloud Serverless Course
 
-Curso de criação de App utilizando tecnologias e ferramentas da Google Cloud Platform como:
+App development course which used some Google Cloud Platform features such as:
 - PubSub
 - BigQuery
 - Cloud Functions
